@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -7,66 +8,70 @@ import Posts from "./components/Posts";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ThemeToggler from "./components/ThemeToggler";
+import Explore from "./pages/Explore";
+import Destinations from "./pages/Destinations";
+import Food from "./pages/Food";
+import Culture from "./pages/Culture";
+import Nature from "./pages/Nature";
+import Festivals from "./pages/Festivals";
+import TravelTips from "./pages/TravelTips";
+import Gallery from "./pages/Gallery";
 
-import Login from "./pages/Login";       // NEW
-import Signup from "./pages/Signup";     // NEW
-import ProtectedRoute from "./ProtectedRoute"; // NEW
+import Guides from "./pages/Guides";
+import GuideProfile from "./pages/GuideProfile";
+
+
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./ProtectedRoute";
+
+import { UserProvider } from "./UserContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
+    <UserProvider>
+      <BrowserRouter>
+        <Navbar />
 
-      {/* Push below navbar */}
-      <div style={{ marginTop: "80px", padding: "20px" }}>
-        <ThemeToggler />
+        <div style={{ marginTop: "80px", padding: "20px" }}>
+          <ThemeToggler />
 
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Routes>
+            {/* Public pages */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/destinations" element={<Destinations />} />
+            <Route path="/food" element={<Food />} />
+            <Route path="/culture" element={<Culture />} />
+            <Route path="/nature" element={<Nature />} />
+            <Route path="/festivals" element={<Festivals />} />
+            <Route path="/travel-tips" element={<TravelTips />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/guides" element={<Guides />} />
+            <Route path="/guide/:id" element={<GuideProfile />} />
 
-          {/* Protected Routes (Require Login) */}
-          <Route 
-            path="/" 
-            element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            } 
-          />
+            {/* First time registration */}
+            <Route path="/register" element={<Register />} />
 
-          <Route 
-            path="/about" 
-            element={
-              <ProtectedRoute>
-                <About />
-              </ProtectedRoute>
-            } 
-          />
+            {/* Private page: only after registration */}
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              } 
+            />
+          </Routes>
+        </div>
 
-          <Route 
-            path="/posts" 
-            element={
-              <ProtectedRoute>
-                <Posts />
-              </ProtectedRoute>
-            } 
-          />
-
-          <Route 
-            path="/contact" 
-            element={
-              <ProtectedRoute>
-                <Contact />
-              </ProtectedRoute>
-            } 
-          />
-        </Routes>
-      </div>
-
-      <Footer />
-    </BrowserRouter>
+        <Footer />
+      </BrowserRouter>
+    </UserProvider>
   );
 }
 

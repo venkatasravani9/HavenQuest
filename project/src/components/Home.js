@@ -1,20 +1,40 @@
-// Home.js
-import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../UserContext";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
-function Home() {
+export default function Home() {
+  const { user } = useContext(UserContext);
+
   return (
     <div className="home">
+      {/* Overlay content area */}
       <div className="overlay">
-        <h1>Welcome to HavenQuest</h1>
-        <p>Your travel companion for exploring hidden gems around the world.</p>
+
+        {/* Dynamic Welcome */}
+        <h1>
+          Welcome {user ? user.name : "Traveler"}!
+        </h1>
+
+        {/* Inspiring line — tourism-focused */}
+        <p>
+          Discover breathtaking places, hidden local gems, and unforgettable cultural experiences.
+        </p>
+
+        {/* Buttons */}
         <div className="buttons">
-          <button className="explore-btn">Explore Now</button>
-          <button className="contact-btn">Contact Us</button>
+          {/* Explore inner page */}
+          <Link to="/explore">
+            <button className="explore-btn">Explore Now</button>
+          </Link>
+
+          {/* Optional contact button (uses your existing style) */}
+          <Link to="/contact">
+            <button className="contact-btn">Contact Us</button>
+          </Link>
         </div>
+
       </div>
     </div>
   );
 }
-
-export default Home;
