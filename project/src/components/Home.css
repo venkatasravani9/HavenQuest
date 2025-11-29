@@ -1,0 +1,101 @@
+/* ----- Overall Page ----- */
+.home {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover no-repeat; /* ✅ set background */
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ----- Navbar ----- */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7); /* Transparent over image */
+  padding: 10px 60px;
+  position: fixed; /* ✅ stays above image */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  color: #ff7f50;
+  font-weight: bold;
+}
+
+/* ----- Navbar Links ----- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff7f50;
+}
+
+/* ----- Hero Overlay ----- */
+.overlay {
+  margin-top: 60px; /* ✅ pushes content below navbar */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4); /* dark overlay for text clarity */
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+/* ----- Buttons ----- */
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.explore-btn,
+.contact-btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background-color: #ff7f50;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover,
+.contact-btn:hover {
+  background-color: #e66a3f;
+}

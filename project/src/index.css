@@ -1,0 +1,41 @@
+/* Common styling */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Light Theme */
+body.light {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Dark Theme */
+body.dark {
+  background-color: #bc7f7f;
+  color: #f1f1f1;
+}
+
+/* Optional: Navbar Style */
+nav {
+  background: #a6c5e8;
+  padding: 10px;
+  color: white;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  background: #f1f1f1;
+  color: #d27a7a;
+  border: none;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+body.dark button {
+  background: #d3e688;
+  color: #f1f1f1;
+}
