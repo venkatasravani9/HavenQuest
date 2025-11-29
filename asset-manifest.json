@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/HavenQuest/static/css/main.1a7bfcd7.css",
+    "main.js": "/HavenQuest/static/js/main.9415c159.js",
+    "index.html": "/HavenQuest/index.html",
+    "main.1a7bfcd7.css.map": "/HavenQuest/static/css/main.1a7bfcd7.css.map",
+    "main.9415c159.js.map": "/HavenQuest/static/js/main.9415c159.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1a7bfcd7.css",
+    "static/js/main.9415c159.js"
+  ]
+}
